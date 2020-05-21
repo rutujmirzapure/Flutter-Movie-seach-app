@@ -5,9 +5,7 @@ A new Flutter application.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-<img src='https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/sreen2.jpeg' ,height: 150 ,width:150>
 
-<img src='' , height: 150 ,width:150>
 
 
 A few resources to get you started if this is your first Flutter project:
@@ -18,3 +16,8 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+<img src='https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/sreen2.jpeg' ,height: 150>
+
+<img src='https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/screen.jpeg' , height: 150>
