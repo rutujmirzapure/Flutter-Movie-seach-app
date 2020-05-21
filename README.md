@@ -5,7 +5,7 @@ A new Flutter application.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-<img src='' ,height: 150 ,width:150>
+<img src='https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/sreen2.jpeg' ,height: 150 ,width:150>
 
 <img src='' , height: 150 ,width:150>
 
