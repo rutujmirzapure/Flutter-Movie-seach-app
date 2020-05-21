@@ -18,9 +18,9 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-<img src='https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/sreen2.jpeg' ,height: 150>
+<img src="https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/sreen2.jpeg" ,height: "150">
 
-<img src='https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/screen.jpeg' , height: 150>
+<img src="https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/screen.jpeg" , "height: 150">
 
 ![alt text](https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/sreen2.jpeg)
 ![alt text](https://github.com/rutujmirzapure/Flutter-Movie-seach-app/blob/master/screen.jpeg)
