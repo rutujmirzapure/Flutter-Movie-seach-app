@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/model/model.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:http/http.dart' as http;
@@ -6,7 +7,7 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 import 'dart:convert';
 
-const key = '11fbce624b26a6399db07560f5bd5fed';
+const key = 'c7a37ce9f0e2cc18f536e7a3ac6d3768';
 
 var rating = 0.0;
 
@@ -91,12 +92,20 @@ class HomeState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Movie Searcher'),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        title: Text(
+          'Movie Searcher',
+          style: GoogleFonts.bangers(color: Colors.red, fontSize: 30),
+        ),
       ),
       body: Container(
         padding: EdgeInsets.all(0.0),
         child: Column(
           children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
@@ -126,10 +135,11 @@ class HomeState extends State<HomePage> {
               itemBuilder: (BuildContext context, int index) {
                 return new MovieView(movies[index]);
               },
-            ))
+            )),
           ],
         ),
       ),
+      backgroundColor: Colors.grey[300],
     );
   }
 }
@@ -153,98 +163,88 @@ class MovieViewState extends State<MovieView> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            height: 200.0,
-            padding: EdgeInsets.all(10.0),
-            child: Row(
+    return Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+        height: 200.0,
+        padding: EdgeInsets.all(5.0),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+                child: Stack(
               children: <Widget>[
-//                movieState.posterPath != null
-////                    ? Align(
-////                        alignment: Alignment.topRight,
-////                        child: Hero(
-////                          child: Image.network(
-////                              "https://image.tmdb.org/t/p/w92${movieState.posterPath}"),
-////                          tag: movieState.id,
-////                        ),
-//                      )
-//                    : Container(),
-                Expanded(
-                    child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      left: 10,
-                      child: Hero(
-                        child: Image.network(
-                            "https://image.tmdb.org/t/p/w92${movieState.posterPath}"),
-                        tag: movieState.id,
-                      ),
+                Positioned(
+                  left: 10,
+                  child: Hero(
+                    child: Image.network(
+                        "https://image.tmdb.org/t/p/w92${movieState.posterPath}"),
+                    tag: movieState.id,
+                  ),
+                ),
+                Positioned(
+                  left: 100,
+                  top: 10,
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      movieState.title,
+                      maxLines: 10,
+                      style:
+                      GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 15)
+                     
                     ),
-                    Positioned(
-                      left: 150,
-                      top: 40,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Text(
-                          movieState.title,
-                          maxLines: 10,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                      ),
+                  ),
+                ),
+                Positioned(
+                  left: 100,
+                  top: 35,
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      'genre:' + movieState.genre_ids,
+                      maxLines: 10,
+                      style: TextStyle(color: Colors.grey),
                     ),
-                    Positioned(
-                      left: 150,
-                      top: 65,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Text(
-                          'genre:' + movieState.genre_ids,
-                          maxLines: 10,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ),
+                  ),
+                ),
+                Positioned(
+                  left: 100,
+                  top: 50,
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      movieState.vote_average,
+                      maxLines: 10,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                          color: Colors.blue.shade900),
                     ),
-                    Positioned(
-                      left: 150,
-                      top: 80,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Text(
-                          movieState.vote_average,
-                          maxLines: 10,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 40.0,
-                              color: Colors.blue.shade900),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 200,
-                      top: 92,
-                      child: Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: SmoothStarRating(
-                            color: Colors.amber,
-                            rating: rating,
-                            size: 20,
-                            filledIconData: Icons.star,
-                            halfFilledIconData: Icons.star_half,
-                            defaultIconData: Icons.star_border,
-                            starCount: 5,
-                            allowHalfRating: true,
-                            spacing: 2.0,
-                            onRated: (value) {
-                              print("rating value -> $value");
-                              // print("rating value dd -> ${value.truncate()}");
-                            },
-                          )),
-                    ),
-                  ],
-                ))
+                  ),
+                ),
+                Positioned(
+                  left: 100,
+                  top: 72,
+                  child: Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: SmoothStarRating(
+                        color: Colors.amber,
+                        rating: rating,
+                        size: 25,
+                        filledIconData: Icons.star,
+                        halfFilledIconData: Icons.star_half,
+                        defaultIconData: Icons.star_border,
+                        starCount: 5,
+                        allowHalfRating: true,
+                        spacing: 2.0,
+                        onRated: (value) {
+                          print("rating value -> $value");
+                          // print("rating value dd -> ${value.truncate()}");
+                        },
+                      )),
+                ),
               ],
-            )));
+            ))
+          ],
+        ));
   }
 }
